@@ -25,5 +25,12 @@ Feature: Login
     Then I receive "This is a required field" message under the email address field
 
 
+  Scenario: Login with missing email address and password
+    Given I open the homepage and I enter the Login section
+    And I enter "" in the email address field and "" in the password field
+    When I click the LOGIN button
+    Then I receive "This is a required field" message under the email address field
+    And I receive "This is a required field" message under the password field
 
-    //scenario: cand dau login fara email si parola
+
+//login succesfull
