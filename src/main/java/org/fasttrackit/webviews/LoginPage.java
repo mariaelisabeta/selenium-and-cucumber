@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage {
-    @FindBy(id="email")
+    @FindBy(id = "email")
     private WebElement emailAddressField;
 
     @FindBy(id = "pass")
@@ -16,13 +16,17 @@ public class LoginPage {
     private WebElement loginButton;
 
 
-    public WebElement getEmailAddressField() {return emailAddressField;}
 
-    public WebElement getPasswordField() {return passwordField;}
+    public WebElement getEmailAddressField() {
+        return emailAddressField;
+    }
 
-    public WebElement getLoginButton() {return loginButton;}
+    public WebElement getPasswordField() {
+        return passwordField;
+    }
 
+    public WebElement getLoginButton() {
+        return loginButton;
+    }
 
-
-
-}
+    }

@@ -24,22 +24,21 @@ public class Header {
 
 
 
+   public WebElement getSearchField() {
+        return searchField;
+    }
+
+    public WebElement getLanguageDropDownList() {return languageDropDownList;}
+
+    public WebElement getAccountButton() {return accountButton;}
+
+
 
     public void search(String keyword) {
         searchField.sendKeys(keyword + Keys.ENTER);
         System.out.println("Pressed Enter in search field.");
     }
 
-    public WebElement getSearchField() {
-        return searchField;
     }
-
-    public WebElement getLanguageDropDownList() {
-        return languageDropDownList;}
-
-    public WebElement getAccountButton() {
-        return accountButton;
-    }};
-
 
 

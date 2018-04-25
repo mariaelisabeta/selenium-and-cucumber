@@ -12,6 +12,8 @@ import org.fasttrackit.webviews.LoginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+
+import javax.swing.*;
 import java.util.List;
 
 import static org.hamcrest.core.StringContains.containsString;
@@ -47,26 +49,31 @@ public class LoginSteps extends TestBase {
 
     @Then("^I receive \"([^\"]*)\" message$")
     public void iReceiveMessage(String message) {
-    assertThat("Unexepected error message received",
-           getErrorMessageContainer().getText(),
-    containsString(message)); }
-
+        assertThat("Unexepected error message received",
+                getErrorMessageContainer().getText(),
+                containsString(message));
+    }
 
 
     @Then("^I receive \"([^\"]*)\" message under the password field$")
     public void iReceiveMessageUnderThePasswordField(String messageUnderThePasswordField) {
         assertThat("Unexpected error message received",
-        getErrorMessageUnderThePasswordField().getText(),
-        containsString(messageUnderThePasswordField));}
+                getErrorMessageUnderThePasswordField().getText(),
+                containsString(messageUnderThePasswordField));
+    }
 
 
     @Then("^I receive \"([^\"]*)\" message under the email address field$")
     public void iReceiveMessageUnderTheEmailAddressField(String messageUnderTheEmailAdressField) {
         assertThat("Unexpected error message received",
-        getErrorMessageUnderTheEmailAddressField().getText(),
-        containsString(messageUnderTheEmailAdressField));}
-
+                getErrorMessageUnderTheEmailAddressField().getText(),
+                containsString(messageUnderTheEmailAdressField));
     }
+
+
+
+}
+
 
 
 
