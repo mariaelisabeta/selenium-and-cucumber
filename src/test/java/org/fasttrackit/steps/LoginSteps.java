@@ -9,6 +9,7 @@ import gherkin.lexer.Sr_cyrl;
 import org.fasttrackit.TestBase;
 import org.fasttrackit.webviews.Header;
 import org.fasttrackit.webviews.LoginPage;
+import org.fasttrackit.webviews.ProductDetailsPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -24,6 +25,7 @@ public class LoginSteps extends TestBase {
 
     private LoginPage loginPage = initElements(LoginPage.class);
     private Header header = initElements(Header.class);
+    private ProductDetailsPage productDetailsPage= initElements(ProductDetailsPage.class);
 
 
     @Given("^I open the homepage and I enter the Login section$")

@@ -24,13 +24,15 @@ public class Header {
 
 
 
-   public WebElement getSearchField() {
+    public WebElement getSearchField() {
         return searchField;
     }
 
     public WebElement getLanguageDropDownList() {return languageDropDownList;}
 
     public WebElement getAccountButton() {return accountButton;}
+
+    public WebElement getLoginSection() {return loginSection;}
 
 
 
