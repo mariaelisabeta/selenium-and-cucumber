@@ -24,6 +24,11 @@ public class Header {
 
 
 
+    @FindBy(xpath="//div[@class='header-minicart']")
+    private WebElement minicartButton;
+
+
+
     public WebElement getSearchField() {
         return searchField;
     }
@@ -34,7 +39,9 @@ public class Header {
 
     public WebElement getLoginSection() {return loginSection;}
 
-
+    public WebElement getMinicartButton() {
+        return minicartButton;
+    }
 
     public void search(String keyword) {
         searchField.sendKeys(keyword + Keys.ENTER);

@@ -7,6 +7,7 @@ import cucumber.api.java.en.When;
 import org.fasttrackit.TestBase;
 import org.fasttrackit.webviews.Header;
 import org.fasttrackit.webviews.ProductDetailsPage;
+import org.hamcrest.Matcher;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -34,10 +35,13 @@ public class SearchSteps extends TestBase {
         WebElement messageUnderPageTitle = driver.findElement(By.cssSelector("p.note-msg "));
     }
 
-    @When("^I click the \"([^\"]*)\" button$")
-    public void iClickTheButton(String keyword) {
-        productDetailsPage.getViewDetailsButton().click();
+    @When("^I click the \"([^\"]*)\" LinkButton$")
+    public void iClickTheButton(String buttonLinkText) {
+        driver.findElement(By.linkText(buttonLinkText)).click();
     }
+
+
+
 
     @And("^I click the \"([^\"]*)\" tab$")
     public void iClickTheTab(String keyword) {
@@ -51,19 +55,28 @@ public class SearchSteps extends TestBase {
     }
 
     @Then("^I expect to see \"([^\"]*)\" in the \"([^\"]*)\" description summary$")
-    public void iExpectToSeeInTheDescriptionSummary(String label, String type){
+    public void iExpectToSeeInTheDescriptionSummary(String label, String booksAndMusicType){
 
-       WebElement additionalInformationRow = driver.findElement(By.xpath("//tr[./th[text()='" +label+ "'] and ./td[text()='" +type+ "']]"));
+       WebElement additionalInformationRow = driver.findElement(By.xpath("//tr[./td[text()='" +label+ "'] and ./th[text()='" +booksAndMusicType+ "']]"));
         assertThat("In the Books & Music Type description summary is not diplayed the word books", additionalInformationRow.isDisplayed());
 
 
     }
+
+
+    @Then("^I expect to see \"([^\"]*)\" or \"([^\"]*)\" in the \"([^\"]*)\" OR \"([^\"]*)\" description summary$")
+    public void iExpectToSeeOrInTheORDescriptionSummary(String bmlabel, String btype, String dlabel, String dtype) {
+
+
+
+
+    }
+
+    @Then("^I expect to see \"([^\"]*)\" in the \"([^\"]*)\" description summary OR \"([^\"]*)\" in the \"([^\"]*)\" description summary$")
+    public void iExpectToSeeInTheDescriptionSummaryORInTheDescriptionSummary(String btype, String bmlabel, String dtype, String dlabel){
+        WebElement additionalInformationRow = driver.findElement(By.xpath("//tr[(./td[text()='" +btype+ "'] and ./th[text()='" +bmlabel+ "']) or (./td[text()='" +dtype+ "'] and ./th[text()='" +dtype+ "'])]"));
+        assertThat("In the description summary is not displayed the words book or denim", additionalInformationRow.isDisplayed());
+
+    }
 }
-
-
-
-
-
-
-
 

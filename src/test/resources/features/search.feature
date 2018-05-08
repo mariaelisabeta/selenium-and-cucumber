@@ -24,15 +24,15 @@ Feature: Search
     Then The "SEARCH RESULTS FOR BOOKS" page is displayed
     When I click the "VIEW DETAILS" button for the first product displayed
     And I click the "ADDITIONAL INFORMATION" tab
-    Then I expect to see "Books" in the "BOOKS & MUSIC TYPE" description summary
+    Then I expect to see "Books" in the "Books & Music Type" description summary
 
-#  Scenario: Search a product
-#    Given I open the homepage
-#    And I search a product by "denim books"
-#    Then The "SEARCH RESULTS FOR DENIM BOOKS" page is displayed
-#    When I click the "VIEW DETAILS" button
-#    And I click the "ADDITIONAL INFORMATION" tab
-#    Then I expect to see "Books" or "DENIM" in the "BOOKS & MUSIC TYPE" OR "TYPE" description summary
+   Scenario: Search two products
+    Given I open the homepage
+    And I search a product by "denim books"
+    Then The "SEARCH RESULTS FOR DENIM BOOKS" page is displayed
+    When I click the "VIEW DETAILS" button for the first product displayed
+    And I click the "ADDITIONAL INFORMATION" tab
+    Then I expect to see "Books" in the "Books & Music Type" description summary OR "Denim" in the "Type" description summary
 
 
 

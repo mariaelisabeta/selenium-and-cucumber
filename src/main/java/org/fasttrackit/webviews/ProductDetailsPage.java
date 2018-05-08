@@ -7,28 +7,89 @@ public class ProductDetailsPage {
     @FindBy(linkText = "VIEW DETAILS")
     private WebElement viewDetailsButton;
 
-    @FindBy (xpath= "//ul[@class='toggle-tabs']/li/span[text() = 'Additional Information']")
+    @FindBy(xpath = "//ul[@class='toggle-tabs']/li/span[text() = 'Additional Information']")
     private WebElement additionalInformationTab;
 
-    @FindBy (className = "data last")
+    @FindBy(className = "data last")
     private WebElement booksType;
 
-    @FindBy (xpath = "//tr[@class='last even']/th[@class='label']")
+    @FindBy(xpath = "//tr[@class='last even']/th[@class='label']")
     private WebElement booksAndMusicTypeLabel;
 
-    @FindBy (xpath = "//tr[@class='even']/th[@class='label']")
+    @FindBy(xpath = "//tr[@class='even']/th[@class='label']")
     private WebElement typeLabel;
 
-    public WebElement getViewDetailsButton() {return viewDetailsButton;}
+    @FindBy(xpath = "//dt[@class='swatch-attr']/label[@id='color_label']")
+    private WebElement colorLabel;
 
-    public WebElement getAdditionalInformationTab() {return additionalInformationTab;}
+    @FindBy(xpath = "//dt[@class='swatch-attr']/label[@id='size_label']")
+    private WebElement sizeLabel;
 
-    public WebElement getBooksType() {return booksType;}
+    @FindBy(xpath = "//dd[contains(@class,'swatch-attr') and preceding-sibling::dt[contains(@class,'swatch-attr') and child::label[@id='color_label']]][1]//div[@class='validation-advice']")
+    private WebElement requiredColorField;
 
-    public WebElement getBooksAndMusicTypeLabel() {return booksAndMusicTypeLabel;}
+    @FindBy(xpath = "//dd[contains(@class,'swatch-attr') and preceding-sibling::dt[contains(@class,'swatch-attr') and child::label[@id='color_label']]][2]//div[@class='validation-advice']")
+    private WebElement requiredSizeField;
 
-    public WebElement getTypeLabel() { return typeLabel;}
+    @FindBy(xpath = "//div[@class='add-to-cart-buttons']//button[@class='button btn-cart']")
+    private WebElement addToCartButton;
+
+    @FindBy(name = "indigo")
+    private WebElement indigoColor;
+
+    @FindBy(name = "xs")
+    private WebElement xsSize;
 
 
+
+
+
+    public WebElement getXsSize() {
+        return xsSize;
+    }
+
+    public WebElement getIndigoColor() {
+        return indigoColor;
+    }
+
+    public WebElement getViewDetailsButton() {
+        return viewDetailsButton;
+    }
+
+    public WebElement getAdditionalInformationTab() {
+        return additionalInformationTab;
+    }
+
+    public WebElement getBooksType() {
+        return booksType;
+    }
+
+    public WebElement getBooksAndMusicTypeLabel() {
+        return booksAndMusicTypeLabel;
+    }
+
+    public WebElement getTypeLabel() {
+        return typeLabel;
+    }
+
+    public WebElement getColorLabel() {
+        return colorLabel;
+    }
+
+    public WebElement getSizeLabel() {
+        return sizeLabel;
+    }
+
+    public WebElement getRequiredColorField() {
+        return requiredColorField;
+    }
+
+    public WebElement getRequiredSizeField() {
+        return requiredSizeField;
+    }
+
+    public WebElement getAddToCartButton() {
+        return addToCartButton;
+    }
 
 }

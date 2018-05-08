@@ -42,6 +42,9 @@ public class LoginSteps extends TestBase {
 
     }
 
+
+
+
     @When("^I click the LOGIN button$")
     public void iClickTheButton() {
         loginPage.getLoginButton().click();
