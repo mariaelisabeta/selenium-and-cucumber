@@ -25,7 +25,7 @@ public class LoginSteps extends TestBase {
 
     private LoginPage loginPage = initElements(LoginPage.class);
     private Header header = initElements(Header.class);
-    private ProductDetailsPage productDetailsPage= initElements(ProductDetailsPage.class);
+    private ProductDetailsPage productDetailsPage = initElements(ProductDetailsPage.class);
 
 
     @Given("^I open the homepage and I enter the Login section$")
@@ -43,10 +43,8 @@ public class LoginSteps extends TestBase {
     }
 
 
-
-
     @When("^I click the LOGIN button$")
-    public void iClickTheButton() {
+    public void iClickTheLoginButton() {
         loginPage.getLoginButton().click();
 
 
@@ -74,7 +72,6 @@ public class LoginSteps extends TestBase {
                 getErrorMessageUnderTheEmailAddressField().getText(),
                 containsString(messageUnderTheEmailAdressField));
     }
-
 
 
 }

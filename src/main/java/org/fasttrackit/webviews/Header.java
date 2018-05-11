@@ -22,8 +22,6 @@ public class Header {
     @FindBy (linkText = "Log In")
     private WebElement loginSection;
 
-
-
     @FindBy(xpath="//div[@class='header-minicart']")
     private WebElement minicartButton;
 

@@ -27,7 +27,7 @@ public class ProductDetailsSteps extends TestBase {
     }
 
     @When("^I click the \"ADD TO CART\" button$")
-    public void iClickTheButton() {
+    public void iClickTheAddToCartButton() {
         productDetailsPage.getAddToCartButton().click();
     }
 

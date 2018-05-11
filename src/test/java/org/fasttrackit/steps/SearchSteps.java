@@ -78,5 +78,9 @@ public class SearchSteps extends TestBase {
         assertThat("In the description summary is not displayed the words book or denim", additionalInformationRow.isDisplayed());
 
     }
+
+
+
+
 }
 

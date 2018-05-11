@@ -28,16 +28,39 @@ Feature: Checkout
     Given I have added an item to my shopping cart
     When I click the shopping cart icon
     Then I land on the "VIEW SHOPPING CART" page
-    And I can see the products in my shopping cart
+    And I can see the product in my shopping cart
+
+
+  Scenario: Unsuccessfully proceed to checkout
+    Given Opening the shopping cart and adding at least an item to cart
+    Then I land on the PROCEED TO CHECKOUT page
+    When I click the "CONTINUE" button from the Checkout Method Section
+    And I click the "CONTINUE" button from the Billing Information Section
+    Then I receive This is a required field and Please select an option message under some fields
 
 
 
 
 
-#  Scenario: Proceed to checkout
-  # sCENARIO: empty cart
+Scenario: Successfully proceed to checkout
+  Given Opening the shopping cart
+  Then I land on the PROCEED TO CHECKOUT page
+  And I click the "CONTINUE" button from the Checkout Information section
+  And I enter "observatorului" in the Address field, "cluj" in the City field, "400000" in the Zip/code field and "0741741741" in the Telephone field
+  And I select "Cluj" from the State/province field and "România" from the Country field
+  And I click the "CONTINUE" button from the Shipping Information section
+#  Then I click the "CONTINUE" button
+#  And I select the the first shipping option
+
+ And I click the "CONTINUE" button from the Shipping Information section
+#  When I click the "PLACE ORDER" button
+#  Then The "YOUR ORDER HAS BEEN RECEIVED" page is displayed
 
 
+#Scenario: Edit products quantity from minicart
+#
+#  Scenario:
+#
 
 
 
