@@ -34,33 +34,28 @@ Feature: Checkout
   Scenario: Unsuccessfully proceed to checkout
     Given Opening the shopping cart and adding at least an item to cart
     Then I land on the PROCEED TO CHECKOUT page
-    When I click the "CONTINUE" button from the Checkout Method Section
     And I click the "CONTINUE" button from the Billing Information Section
     Then I receive This is a required field and Please select an option message under some fields
 
 
+  Scenario: Successfully proceed to checkout
+    Given Opening the shopping cart
+    Then I land on the PROCEED TO CHECKOUT page
+#    And I click the "CONTINUE" button from the Checkout Method Section
+    And I enter "observatorului" in the Address field, "cluj" in the City field, "400000" in the Zip/code field and "0741741741" in the Telephone field
+    And I select "Cluj" from the State/province field and "România" from the Country field
+    And I click the "CONTINUE" button from the Billing Information Section
+    And I select the the first shipping option
+    And I click the "CONTINUE" button from the Shipping Information section
+    Then I click the "CONTINUE" button from the Payment Information Section
+    And I click the "PLACE ORDER" button from the Order Review Section
+    Then The "Your order has been received" page is displayed
 
 
-
-Scenario: Successfully proceed to checkout
-  Given Opening the shopping cart
-  Then I land on the PROCEED TO CHECKOUT page
-  And I click the "CONTINUE" button from the Checkout Information section
-  And I enter "observatorului" in the Address field, "cluj" in the City field, "400000" in the Zip/code field and "0741741741" in the Telephone field
-  And I select "Cluj" from the State/province field and "România" from the Country field
-  And I click the "CONTINUE" button from the Shipping Information section
-#  Then I click the "CONTINUE" button
-#  And I select the the first shipping option
-
- And I click the "CONTINUE" button from the Shipping Information section
+#  And I click the "CONTINUE" button from the Shipping Information section
 #  When I click the "PLACE ORDER" button
 #  Then The "YOUR ORDER HAS BEEN RECEIVED" page is displayed
-
-
-#Scenario: Edit products quantity from minicart
-#
-#  Scenario:
-#
+#  Then I click the "CONTINUE" button
 
 
 

@@ -19,7 +19,7 @@ public class ShoppingCartPage {
     @FindBy(xpath = "//div[@class='buttons-set']//button[@title='Continue']")
     private WebElement continueButton;
 
-    @FindBy(xpath = "//div[@id='shipping-buttons-container']")
+    @FindBy(xpath = "//button[@onclick='shippingMethod.save()']")
     private WebElement continueButtonFromShippingInformationSection;
 
 
@@ -75,6 +75,16 @@ public class ShoppingCartPage {
     @FindBy(xpath = "//div[@class='buttons-set']/button[@onclick='billing.save()']")
     private WebElement continueButtonFromBillingInformationSection;
 
+
+    public WebElement getPlaceOrderButton() {
+        return placeOrderButton;
+    }
+
+    @FindBy (xpath="//button[@title='Place Order']")
+private WebElement placeOrderButton;
+
+    @FindBy (xpath = "//div[@id='checkout-step-payment']//button[@class='button']")
+private WebElement continueButtonFromPaymentInformationSection;
 
     public WebElement getProceedToCheckoutButton() {
         return proceedToCheckoutButton;
@@ -162,4 +172,8 @@ public class ShoppingCartPage {
 
 
     public WebElement getRequiredStateField() {
-        return requiredStateField;}}
+        return requiredStateField;}
+
+    public WebElement getContinueButtonFromPaymentInformationSection() {
+        return continueButtonFromPaymentInformationSection;
+    }}

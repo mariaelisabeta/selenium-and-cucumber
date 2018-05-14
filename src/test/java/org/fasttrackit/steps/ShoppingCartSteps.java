@@ -53,7 +53,7 @@ public class ShoppingCartSteps extends TestBase {
     @Given("^Opening the shopping cart$")
     public void openingTheShoppingCart() {
         loginSteps.iOpenTheHomepageAndIEnterTheLoginSection();
-        loginSteps.iEnterInTheEmailaddressFieldAndInThePasswordField("123testmnb", "123testmnb");
+        loginSteps.iEnterInTheEmailaddressFieldAndInThePasswordField("mnbqatest@gmail.com", "QaTestMnb");
         loginSteps.iClickTheLoginButton();
         searchSteps.iSearchAProductBy("Shirt");
         searchSteps.iClickTheButtonForTheFirstProductDisplayed("VIEW DETAILS");
@@ -112,8 +112,8 @@ public class ShoppingCartSteps extends TestBase {
 
     }
 
-    @When("^I click the \"CONTINUE\" button from the Shipping Information section$")
-    public void iClickTheButtonFromTheShippingInformationSection() {
+    @When("^I click the \"([^\"]*)\" button from the Shipping Information section$")
+    public void iClickTheButtonFromTheShippingInformationSection(String arg2) {
         shoppingCartPage.getContinueButtonFromShippingInformationSection().click();
 
     }
@@ -134,13 +134,8 @@ public class ShoppingCartSteps extends TestBase {
 
     }
 
-    @When("^I click the \"CONTINUE\" button from the Checkout Information section$")
-    public void iClickTheButtonFromTheCheckoutMethodSection() {
-        shoppingCartPage.getContinueButtonFromCheckoutMethodSection().click();
-    }
-
     @And("^I click the \"([^\"]*)\" button from the Billing Information Section$")
-    public void iClickTheButtonFromTheBillingInformationSection() {
+    public void iClickTheButtonFromTheBillingInformationSection(String arg1) {
         shoppingCartPage.getContinueButtonFromBillingInformationSection().click();
     }
 
@@ -152,6 +147,21 @@ public class ShoppingCartSteps extends TestBase {
 
     }
 
+    @When("^I click the \"([^\"]*)\" button from the Checkout Method Section$")
+    public void iClickTheButtonFromTheCheckoutMethodSection(String arg0) {
+        shoppingCartPage.getContinueButtonFromCheckoutMethodSection().click();
+    }
+
+    @Then("^I click the \"([^\"]*)\" button from the Payment Information Section$")
+    public void iClickTheButtonFromThePaymentInformationSection(String arg0) throws InterruptedException {
+        Thread.sleep(1000);
+        shoppingCartPage.getContinueButtonFromPaymentInformationSection().click();
+    }
+
+    @And("^I click the \"([^\"]*)\" button from the Order Review Section$")
+    public void iClickTheButtonFromTheOrderReviewSection(String arg0) {
+        shoppingCartPage.getPlaceOrderButton().click();
+    }
 }
 
 

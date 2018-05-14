@@ -37,15 +37,15 @@ public class ProductDetailsPage {
     @FindBy(name = "indigo")
     private WebElement indigoColor;
 
-    @FindBy(name = "xs")
-    private WebElement xsSize;
+    @FindBy(name = "m")
+    private WebElement mSize;
 
 
 
 
 
-    public WebElement getXsSize() {
-        return xsSize;
+    public WebElement getMSize() {
+        return mSize;
     }
 
     public WebElement getIndigoColor() {

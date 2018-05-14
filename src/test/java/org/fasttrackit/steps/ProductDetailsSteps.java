@@ -35,7 +35,7 @@ public class ProductDetailsSteps extends TestBase {
     @When("^I select a colour for my product and a size for my product$")
     public void iSelectAColourForMyProductAndASizeForMyProduct() {
         productDetailsPage.getIndigoColor().click();
-        productDetailsPage.getXsSize().click();
+        productDetailsPage.getMSize().click();
     }
 
 

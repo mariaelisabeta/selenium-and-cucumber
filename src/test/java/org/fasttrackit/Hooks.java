@@ -15,9 +15,10 @@ import cucumber.api.java.Before;
             DriverFactory.getDriver().get(AppConfig.getSiteUrl());
         }
 
-      //  @After
-      //  public void teardown() {
-        //    DriverFactory.getDriver().quit();
- //       }
+
+//        @After
+//       public void teardown() {
+//         DriverFactory.getDriver().quit();
+//        }
 
 }
