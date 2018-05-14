@@ -53,7 +53,7 @@ public class ShoppingCartSteps extends TestBase {
     @Given("^Opening the shopping cart$")
     public void openingTheShoppingCart() {
         loginSteps.iOpenTheHomepageAndIEnterTheLoginSection();
-        loginSteps.iEnterInTheEmailaddressFieldAndInThePasswordField("mnbqatest@gmail.com", "QaTestMnb");
+        loginSteps.iEnterInTheEmailaddressFieldAndInThePasswordField("qatestmnb@gmail.com", "QaTestMnb");
         loginSteps.iClickTheLoginButton();
         searchSteps.iSearchAProductBy("Shirt");
         searchSteps.iClickTheButtonForTheFirstProductDisplayed("VIEW DETAILS");

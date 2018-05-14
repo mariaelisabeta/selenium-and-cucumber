@@ -16,9 +16,9 @@ import cucumber.api.java.Before;
         }
 
 
-//        @After
-//       public void teardown() {
-//         DriverFactory.getDriver().quit();
-//        }
+        @After
+       public void teardown() {
+         DriverFactory.getDriver().quit();
+        }
 
 }

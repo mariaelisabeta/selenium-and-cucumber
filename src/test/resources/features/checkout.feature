@@ -41,7 +41,6 @@ Feature: Checkout
   Scenario: Successfully proceed to checkout
     Given Opening the shopping cart
     Then I land on the PROCEED TO CHECKOUT page
-#    And I click the "CONTINUE" button from the Checkout Method Section
     And I enter "observatorului" in the Address field, "cluj" in the City field, "400000" in the Zip/code field and "0741741741" in the Telephone field
     And I select "Cluj" from the State/province field and "România" from the Country field
     And I click the "CONTINUE" button from the Billing Information Section
@@ -52,10 +51,6 @@ Feature: Checkout
     Then The "Your order has been received" page is displayed
 
 
-#  And I click the "CONTINUE" button from the Shipping Information section
-#  When I click the "PLACE ORDER" button
-#  Then The "YOUR ORDER HAS BEEN RECEIVED" page is displayed
-#  Then I click the "CONTINUE" button
 
 
 
